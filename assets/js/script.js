@@ -10,8 +10,8 @@ var taskFormHandler = function(event) {
 
     // package up data as an object
     var taskDataObj = {
-        name: taskNameInput,
-        type: taskTypeInput
+        name: "taskNameInput",
+        type: "taskTypeInput"
     };
 
     //send it as an argument to createTaskEl
@@ -19,6 +19,12 @@ var taskFormHandler = function(event) {
 }
 
 var createTaskEl = function(taskDataObj) {
+
+    //taskDataObj
+    {
+        name: "Task's name";
+        type: "Task's type"
+    }
      //create list item
     var listItemEl = document.createElement("li");
     listItemEl.className = "task-item";
@@ -33,6 +39,7 @@ var createTaskEl = function(taskDataObj) {
     listItemEl.appendChild(taskInfoEl);
     
     //add entire list item to list
+    var tasksToDoEl = document.querySelector("#tasks-to-do");
     tasksToDoEl.appendChild(listItemEl);
 }
 formEl.addEventListener("submit", taskFormHandler);
